@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>3RD PARTY CHECKER - COMPLETE</title>
+  </head>
+  <body>
+  <script>
+    if (window.parent) {
+	    if (/thirdparty=yes/.test(document.cookie)) {
+	  	  window.parent.postMessage('ABT-THIRD-PARTY-SUPPORTED', '*');
+	    } else {
+	  	  window.parent.postMessage('ABT-THIRD-PARTY-UNSUPPORTED', '*');
+	    }
+	    document.cookie = 'thirdparty=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+   }
+  </script>
+  </body>
+</html>
